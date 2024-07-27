@@ -250,7 +250,7 @@
   function downloadXML() {
     var xmlContent = editor.getValue();
     var fileName = document.getElementById("new_xml_name").value || "scenario";
-    var blob = new Blob([xmlContent], { type: "text/xml" });
+    var blob = new Blob([xmlContent], { type: "application/xml" });
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
     a.href = url;
