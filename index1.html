@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SipP xml scenarios</title>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+<h1 class="newpageh1">Some SipP xml sceanrios</h1>
+
+    <ul id="fileList">
+        <!-- The list of XML files will be dynamically inserted here -->
+    </ul>
+
+    <script>
+        // List of XML files
+        const xmlFiles = [
+            'uac_basic.xml',
+            'uac_media.xml',
+            'uac_options.xml',
+            'uac_prack.xml'
+        ];
+
+        const fileList = document.getElementById('fileList');
+
+        // Dynamically create list items for each XML file
+        xmlFiles.forEach(file => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `xml/${file}`;
+            link.download = file;
+            link.textContent = file;
+            listItem.appendChild(link);
+            fileList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
