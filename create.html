@@ -14,10 +14,10 @@
 <body>
 
   <div style="float: left; padding-right:10px; font-weight:bold;">
-    <a href="/sipp-xml"><span style="font-size: 28px; color: #71695e">k</span><span style="font-size: 21px; color: #ff943f">SipP</span></a>
+    <a href="/sipp-xml/"><span style="font-size: 28px; color: #71695e">k</span><span style="font-size: 21px; color: #ff943f">SipP</span></a>
     </div>
     <div class="menubar">
-        <a href="/sipp-xml">xml scenarios</a>
+        <a href="/sipp-xml/">xml scenarios</a>
         <a class="active" href="#">Create new xml</a>
     </div>
 <div style="clear: both; margin-top:14px;"></div>
@@ -207,8 +207,8 @@
   <script>
   
   var editor = ace.edit("xml-editor");
-  editor.session.setMode("static/ace/mode/xml");
-  editor.setTheme("static/ace/theme/chrome");
+  editor.session.setMode("ace/mode/xml");
+  editor.setTheme("ace/theme/chrome");
   editor.setFontSize('13px');
   // Scroll to the bottom line
   editor.session.on('change', () => {
