@@ -17,12 +17,15 @@
 <div style="clear: both; margin-top:14px;"></div>
 
 <h1 class="newpageh1">Some SipP xml sceanrios</h1>
-    <div style="float: left; width:50%;">
-    <ul id="fileList">
-        <!-- The list of XML files will be dynamically inserted here -->
+    <div id="xml-lists" style="float: left; width:66%;">
+    <ul id="uac-list">
+        <!-- The list of UAC XML files will be dynamically inserted here -->
+    </ul>
+    <ul id="uas-list">
+        <!-- The list of UAS XML files will be dynamically inserted here -->
     </ul>
     </div>
-    <div style="float: left; width:50%;">
+    <div id="xml-flow"style="float: left; width:33%;">
     <div id="diagram"></div>
     </div>
     <script src="static/sdjs/snap.svg-min.js"></script>
@@ -31,14 +34,22 @@
 
     <script>
         // List of XML files
-        const xmlFiles = [
-            'uac_basic.xml',
-            'uac_media.xml',
-            'uac_options.xml',
-            'uac_prack.xml',
-            'uas_recv_send_update.xml',
-            'uas_send_reinvite.xml'
-        ];
+        const uacXmlFiles=[
+         'uac_basic.xml',
+         'uac_media.xml',
+         'uac_options.xml',
+         'uac_prack.xml',
+         'uac_recv_reinvite.xml',
+         'uac_send_recv_update.xml'
+        ]
+        const uasXmlFiles=[
+         'uas_basic.xml',
+         'uas_media.xml',
+         'uas_options.xml',
+         'uas_prack.xml',
+         'uas_recv_send_update.xml',
+         'uas_send_reinvite.xml'
+        ]
 
         // used in sequence-diagram-kmod.js
         let kpacketId = 1;

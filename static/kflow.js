@@ -1,30 +1,47 @@
-const fileList = document.getElementById('fileList');
-// Dynamically create list items for each XML file
-xmlFiles.forEach(file => {
-    const listItem = document.createElement('li');
+const uacXmlList = document.getElementById('uac-list');
+const uasXmlList = document.getElementById('uas-list');
 
+function createXmlListItem(xmlName){
+    const listItem = document.createElement('li');
     // Download link
     const downloadLink = document.createElement('a');
-    downloadLink.href = `xml/${file}`;
-    downloadLink.download = file; 
-    downloadLink.textContent = `${file} - `;
+    downloadLink.href = `xml/${xmlName}`;
+    downloadLink.download = xmlName; 
+    downloadLink.textContent = `${xmlName}`;
 
-    // View Diagram link
-    const viewLink = document.createElement('a');
-    viewLink.href = `#`;
-    viewLink.textContent = `view flow`;
-    viewLink.className = 'view-link';
-    viewLink.setAttribute('data-filename', file);
+    listItem.setAttribute('data-filename', xmlName);
+    listItem.classList.add('xml-li');
 
+    // // View Diagram link
+    // const viewLink = document.createElement('a');
+    // viewLink.href = `#`;
+    // viewLink.textContent = `view flow`;
+    // viewLink.className = 'view-link';
+    // viewLink.setAttribute('data-filename', xmlName);
+    // Event listener to highlight the selected item
+    listItem.addEventListener('click', () => {
+        document.querySelectorAll('li').forEach(li => li.classList.remove('selected'));
+        listItem.classList.add('selected');
+    });
     // Append links to the list item
     listItem.appendChild(downloadLink);
-    listItem.appendChild(viewLink);
-    fileList.appendChild(listItem);
+    // listItem.appendChild(viewLink);
+    return listItem;
+};
+
+uacXmlFiles.forEach(file => {
+    const listItem = createXmlListItem(file);
+    uacXmlList.appendChild(listItem);
 });
+uasXmlFiles.forEach(file => {
+    const listItem = createXmlListItem(file);
+    uasXmlList.appendChild(listItem);
+});
+
 
 // Event listener for View Diagram links
 document.addEventListener('click', async (event) => {
-    if (event.target && event.target.classList.contains('view-link')) {
+    if (event.target && event.target.classList.contains('xml-li')) {
         event.preventDefault();
         const fileName = event.target.getAttribute('data-filename');
         try {

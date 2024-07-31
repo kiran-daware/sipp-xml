@@ -3,20 +3,23 @@ html {
     font-family: sans-serif;
     color: #49443d;
     background-color: #f8f6f2;
+    height: 100%;
 }
 body {
-    margin: 10px;
+    margin: 10px; height: 100%;
 }
 h1 {margin: 0;}
 h1 a {
     color: #ff943f;
     text-decoration: underline #aeaeae;}
-
+a {
+  text-decoration: none;
+  color:#3b3b3b
+}
 .menubar {
     overflow: hidden;
     background-color: #ff943f;
   }
-  
   .menubar a {
     float: left;
     color: #f8f6f2;
@@ -25,12 +28,10 @@ h1 a {
     text-decoration: none;
     font-size: 17px;
   }
-  
   .menubar a:hover {
     background-color: #ddd;
     color: #615a50;
   }
-  
   .menubar a.active {
     background-color: #71695e;
     color: white;
@@ -56,22 +57,22 @@ h1 a {
     color: #ffffff;
   }
 
-.xmlname {color:#331d0c;}
-
-
-
-
-
 ul {
   list-style-type: none;
 }
 li {
-  margin: 10px 0;
+  padding: 5px 10px;
 }
-a {
-  text-decoration: none;
-  color: #223344;
+li:nth-child(odd) {
+  background-color: #f1f1f1;
 }
-a:hover {
-  text-decoration: underline;
+li:nth-child(even) {
+  background-color: #eaeaea;
 }
+.selected{background-color: #71695e !important; color: #f1f1f1 !important;}
+.selected a {color: #f1f1f1;}
+#xml-lists ul {padding:0; width:49%; display: inline-block;}
+#xml-flow {float: left; width:33%; min-height: 100%; background-color: beige;text-align: center;}
+
+
+
