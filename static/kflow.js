@@ -113,8 +113,6 @@ participant farEnd
         }
     });
 
-    console.log(sipMessages);
-
 
     sipMessages.forEach(messageElement => {
         const tagName = messageElement.tagName;

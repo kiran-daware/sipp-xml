@@ -871,7 +871,7 @@
             // kmod in drawSignal and drawSelfSignal
             // .attr('id', "kmsg"+kpacketId).attr('onclick', 'showMore(this.id)'), kpacketId++
             drawSignal: function(signal, offsetY) {
-                return this.beginGroup(), BaseTheme.prototype.drawSignal.call(this, signal, offsetY), this.finishGroup().addClass("signal").attr('id', "kmsg"+kpacketId).attr('onclick', 'showMore(this.id)'), kpacketId++
+                return this.beginGroup(), BaseTheme.prototype.drawSignal.call(this, signal, offsetY), this.finishGroup().addClass("signal").attr('id', "kmsg"+kpacketId), kpacketId++
             },
             drawSelfSignal: function(signal, offsetY) {
                 return this.beginGroup(), BaseTheme.prototype.drawSelfSignal.call(this, signal, offsetY), this.finishGroup().addClass("signal").attr('id', "kmsg"+kpacketId).attr('onclick', 'showMore(this.id)'), kpacketId++
