@@ -62,6 +62,7 @@ ul {
 }
 li {
   padding: 5px 10px;
+  transition: transform .2s
 }
 li:nth-child(odd) {
   background-color: #f1f1f1;
@@ -69,10 +70,18 @@ li:nth-child(odd) {
 li:nth-child(even) {
   background-color: #eaeaea;
 }
+li:hover{background-color: #ffffff; transform: scale(1.04);} 
 .selected{background-color: #71695e !important; color: #f1f1f1 !important;}
 .selected a {color: #f1f1f1;}
 #xml-lists ul {padding:0; width:49%; display: inline-block;}
 #xml-flow {float: left; width:33%; min-height: 100%; background-color: beige;text-align: center;}
 
-
-
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  transition: transform .2s
+}
+.download-button:hover {
+  transform: scale(1.4);
+} 
