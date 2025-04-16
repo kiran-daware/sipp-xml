@@ -50,7 +50,7 @@ document.addEventListener('click', async (event) => {
     if (event.target && event.target.classList.contains('show-flow')) {
         event.preventDefault();
         // Clear the old diagram
-        const container = document.getElementById('diagram');
+        const container = document.getElementById('flow-diagram');
         container.innerHTML = '';
 
         const fileName = event.target.getAttribute('data-filename');
@@ -142,5 +142,5 @@ participant farEnd
 
 function renderDiagram(umlText) {
     const diagram = Diagram.parse(umlText);
-    diagram.drawSVG('diagram', {theme: 'simple'});
+    diagram.drawSVG('flow-diagram', {theme: 'simple'});
 }
