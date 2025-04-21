@@ -16,6 +16,12 @@ This free web tool lets you easily build SIP call flows and export valid XML fil
 - View a visual flow diagram of the call sequence
 
 
+## Screenshots
+
+![SIPp XML flow diagram preview](sipp-xml-scenarios.png)
+
+![SIPp XML Generator Preview](create-sipp-xml.png)
+
 ---
 
 ## 🚀 Tech Stack
