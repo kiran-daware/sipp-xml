@@ -1,4 +1,4 @@
-# SIPp XML Scenario Generator 🧪
+# SIPp XML Scenario Generator
 
 Create SIPp XML scenarios online for free — no need to write raw XML!
 
@@ -37,7 +37,3 @@ This free web tool lets you easily build SIP call flows and export valid XML fil
 Found a bug or want to add new scenarios? PRs are welcome!
 
 ---
-
-## 📜 License
-
-MIT License – Free for personal and commercial use.
