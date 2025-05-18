@@ -77,14 +77,14 @@ li:hover{background-color: #ffffff; transform: scale(1.04);}
 #xml-lists ul {padding:0; width:49%; display: inline-block;}
 #xml-flow {float: left; width:33%; min-height: 100%; background-color: beige;text-align: center;}
 .show-flow {cursor: default;}
-.download-button {
+.download-button, .xml-li-button {
   display: inline-flex;
   align-items: center;
   padding: 5px 9px;
   transition: transform .2s;
   color: #ababab;
 }
-.download-button:hover {
+.download-button:hover, .xml-li-button:hover {
   transform: scale(1.4);
   color: #3b3b3b;
 }

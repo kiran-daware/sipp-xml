@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3WN139HY00"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3WN139HY00');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit SIPp XML Scenarios</title>
+    <meta name="description" content="Free SIPp XML scenarios for VoIP testing. Common SIP call flows, registration, INVITE, and more. Just download and run with your SIPp tool.">
+    <meta name="keywords" content="sipp, sip testing, voip, sip scenario generator, voip testing, telecom testing, sip call, xml sipp tool">
+
+    <meta property="og:title" content="Create SIPp XML Scenarios – Easily Create SIP Scenarios for VoIP Testing">
+    <meta property="og:description" content="Create SIPp XML scenarios online for free. Define SIP call flows and export valid XML for use with your SIPp tool.">
+    <meta property="og:url" content="https://kiran-daware.github.io/sipp-xml/">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:image" content="https://yourdomain.com/preview.png"> -->
+
+    <!-- Include the Ace Editor library -->
+    <script src="../static/ace/ace.js"></script>
+    <script src="../static/ace/mode-xml.js"></script>
+    <script src="../static/ace/worker-xml.js"></script>
+    <script src="../static/ace/theme-chrome.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <button onclick="goBack()">Back</button>
+    <div id="xml-editor" style="width: 100%; height: 90vh;">Loading...</div>
+  
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const xmlName = params.get("xml");
+  
+      function goBack() {
+        window.location.href = `../`;
+      }
+  
+      async function fetchXMLFile(fileName) {
+        try {
+          const response = await fetch(`https://kiran-daware.github.io/sipp-xml/xml/${fileName}`);
+          if (!response.ok) {
+            throw new Error(`Could not fetch ${fileName}`);
+          }
+          const xmlText = await response.text();
+          initializeEditor(xmlText);
+        } catch (error) {
+          document.getElementById('xml-editor').textContent = error.message;
+          console.error(error);
+        }
+      }
+  
+      function initializeEditor(xmlText) {
+        const editor = ace.edit("xml-editor");
+        editor.setTheme("ace/theme/chrome");
+        editor.session.setMode("ace/mode/xml");
+        editor.setFontSize('13px');
+        editor.setValue(xmlText, -1); // -1 moves cursor to start
+        editor.commands.addCommand({
+          name: "find",
+          bindKey: { win: "Ctrl-F", mac: "Command-F" },
+          exec: function(editor) {
+            editor.execCommand("find");
+          }
+        });
+      }
+  
+      // Fetch and load the XML
+      if (xmlName) {
+        fetchXMLFile(xmlName);
+      } else {
+        document.getElementById('xml-editor').textContent = "No XML file specified in the URL.";
+      }
+    </script>
+
+</body>
+
+</html>
